@@ -121,9 +121,10 @@ function plugin(fastify, options, pluginRegistrationDone) {
           enc: req.cookies[opts.sessionCookieName],
         });
       } else {
+        // ⚠️ Corrigido: 'request' → 'req'
         console.error(
           '[getSessionID]:[0]> sessionID:',
-          request.headers['user-agent'],
+          req.headers['user-agent'],
           req.cookies[opts.sessionCookieName]
         );
       }
@@ -142,9 +143,10 @@ function plugin(fastify, options, pluginRegistrationDone) {
           enc: req.query[opts.sessionCookieName],
         });
       } else {
+        // ⚠️ Corrigido: 'request' → 'req'
         console.error(
           '[getSessionID]:[1]> sessionID:',
-          request.headers['user-agent'],
+          req.headers['user-agent'],
           req.query[opts.sessionCookieName]
         );
       }
